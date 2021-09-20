@@ -21,7 +21,7 @@ static void reverse(struct header h, int16_t *samples)
         // loop para lidar com qualquer número de canais
         for (size_t j = 0; j < h.fmt.num_channels; j++)
         {
-            SWAP(samples[i + j], samples[length - i - j]);
+            SWAP(samples[i + j], samples[length - i - j - h.fmt.num_channels]);
         }
     }
 }
